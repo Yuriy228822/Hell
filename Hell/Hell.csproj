@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{15287A96-644B-4CCA-9984-3806A18D85E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hell</RootNamespace>
+    <AssemblyName>Hell</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ViewModel\ChemicalsViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentViewModel.cs" />
+    <Compile Include="ViewModel\Field ActivitiesViewModel.cs" />
+    <Compile Include="ViewModel\FiledViewModel.cs" />
+    <Compile Include="ViewModel\finished_profuctionViewModel.cs" />
+    <Compile Include="ViewModel\IngredientsViewModel.cs" />
+    <Compile Include="ViewModel\Login_PasswordViewModel.cs" />
+    <Compile Include="ViewModel\Packaged_productsViewModel.cs" />
+    <Compile Include="ViewModel\PackagingViewModel.cs" />
+    <Compile Include="ViewModel\PackingViewModel.cs" />
+    <Compile Include="ViewModel\Packing_stage.cs" />
+    <Compile Include="ViewModel\PantryViewModel.cs" />
+    <Compile Include="ViewModel\PeopleViewModel.cs" />
+    <Compile Include="ViewModel\PostViewModel.cs" />
+    <Compile Include="ViewModel\ProductionViewModel.cs" />
+    <Compile Include="ViewModel\Raw_materialsViewModel.cs" />
+    <Compile Include="ViewModel\ReceiptsViewModel.cs" />
+    <Compile Include="ViewModel\RecipesViewModel.cs" />
+    <Compile Include="ViewModel\RoomViewModel.cs" />
+    <Compile Include="ViewModel\SalesViewModel.cs" />
+    <Compile Include="ViewModel\SeedsViewModel.cs" />
+    <Compile Include="ViewModel\ShopViewModel.cs" />
+    <Compile Include="ViewModel\SuppliesViewModel.cs" />
+    <Compile Include="ViewModel\Supplies_of_raw_materialsViewModel.cs" />
+    <Compile Include="ViewModel\TechniqueViewModel.cs" />
+    <Compile Include="ViewModel\Workers_StoreroomViewModel.cs" />
+    <Compile Include="View\Chemicals.xaml.cs">
+      <DependentUpon>Chemicals.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Equipment.xaml.cs">
+      <DependentUpon>Equipment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\finished products.xaml.cs">
+      <DependentUpon>finished products.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Ingredients.xaml.cs">
+      <DependentUpon>Ingredients.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Login Password.xaml.cs">
+      <DependentUpon>Login Password.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Packaged products.xaml.cs">
+      <DependentUpon>Packaged products.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Packaging.xaml.cs">
+      <DependentUpon>Packaging.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Packing stage.xaml.cs">
+      <DependentUpon>Packing stage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Packing.xaml.cs">
+      <DependentUpon>Packing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Pantry.xaml.cs">
+      <DependentUpon>Pantry.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\People.xaml.cs">
+      <DependentUpon>People.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Post.xaml.cs">
+      <DependentUpon>Post.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Production.xaml.cs">
+      <DependentUpon>Production.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Raw_materials.xaml.cs">
+      <DependentUpon>Raw_materials.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Receipts.xaml.cs">
+      <DependentUpon>Receipts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Recipes.xaml.cs">
+      <DependentUpon>Recipes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Room.xaml.cs">
+      <DependentUpon>Room.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales.xaml.cs">
+      <DependentUpon>Sales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Seeds.xaml.cs">
+      <DependentUpon>Seeds.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shop.xaml.cs">
+      <DependentUpon>Shop.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Suppliers.xaml.cs">
+      <DependentUpon>Suppliers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Supplies of raw materilas.xaml.cs">
+      <DependentUpon>Supplies of raw materilas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Technique.xaml.cs">
+      <DependentUpon>Technique.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Workers Storeroom.xaml.cs">
+      <DependentUpon>Workers Storeroom.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\Chemicals.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Equipment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Field Activities.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Field.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\finished products.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Ingredients.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Login Password.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\Field Activities.xaml.cs">
+      <DependentUpon>Field Activities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Field.xaml.cs">
+      <DependentUpon>Field.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\Packaged products.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Packaging.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Packing stage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Packing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Pantry.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\People.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Post.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Production.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Raw_materials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Receipts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Recipes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Room.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sales.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Seeds.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shop.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Suppliers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Supplies of raw materilas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Technique.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Workers Storeroom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

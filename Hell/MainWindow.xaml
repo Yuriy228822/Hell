@@ -1,0 +1,39 @@
+﻿<Window x:Class="Hell.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hell"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="497" Width="354">
+    <Grid>
+        <StackPanel>
+            <Button Content="Поля" Margin="5" Click="OpenПоляWindow_Click"/>
+            <Button Content="Полевые мероприятия" Margin="5" Click="OpenПолевыеМероприятияWindow_Click"/>
+            <Button Content="Сырье" Margin="5" Click="OpenСырьеWindow_Click"/>
+            <Button Content="Люди" Margin="5" Click="OpenЛюдиWindow_Click"/>
+            <Button Content="Производство" Margin="5" Click="OpenПроизводствоWindow_Click"/>
+            <Button Content="Химикаты" Margin="5" Click="OpenХимикатыWindow_Click"/>
+            <Button Content="Поставки Сырье" Margin="5" Click="OpenПоставкиСырьеWindow_Click"/>
+            <Button Content="Кладовая" Margin="5" Click="OpenКладоваяWindow_Click"/>
+            <Button Content="Магазин" Margin="5" Click="OpenМагазинWindow_Click"/>
+            <Button Content="Техника" Margin="5" Click="OpenТехникаWindow_Click"/>
+            <Button Content="Поставщики" Margin="5" Click="OpenПоставщикиWindow_Click"/>
+            <Button Content="Оборудование" Margin="5" Click="OpenОборудованиеWindow_Click"/>
+            <Button Content="Ингредиенты" Margin="5" Click="OpenИнгредиентыWindow_Click"/>
+            <Button Content="Готовая продукция" Margin="5" Click="OpenГотоваяПродукцияWindow_Click"/>
+            <Button Content="Семена" Margin="5" Click="OpenСеменаWindow_Click"/>
+            <Button Content="Рабочие Кладовая" Margin="5" Click="OpenРабочиеКладоваяWindow_Click"/>
+            <Button Content="Рецепты" Margin="5" Click="OpenРецептыWindow_Click"/>
+            <Button Content="Фасовка" Margin="5" Click="OpenФасовкаWindow_Click"/>
+            <Button Content="Этап фасовки" Margin="5" Click="OpenЭтапФасовкиWindow_Click"/>
+            <Button Content="Помещение" Margin="5" Click="OpenПомещениеWindow_Click"/>
+            <Button Content="Чеки" Margin="5" Click="OpenЧекиWindow_Click"/>
+            <Button Content="Продажи" Margin="5" Click="OpenПродажиWindow_Click"/>
+            <Button Content="Должность" Margin="5" Click="OpenДолжностьWindow_Click"/>
+            <Button Content="Фасованная продукция" Margin="5" Click="OpenФасованнаяПродукцияWindow_Click"/>
+            <Button Content="Упаковка" Margin="5" Click="OpenУпаковкаWindow_Click"/>
+            <Button Content="Логин и Пароль" Margin="5" Click="OpenЛогинПарольWindow_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

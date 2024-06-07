@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hell.View.Production"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hell.View"
+        mc:Ignorable="d"
+         Title="Производство" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Название продукта" Margin="5"/>
+            <TextBox x:Name="НазваниеПродуктаTextBox" Margin="5"/>
+
+            <TextBlock Text="Этапы производства" Margin="5"/>
+            <TextBox x:Name="ЭтапыПроизводстваTextBox" Margin="5"/>
+
+            <TextBlock Text="Ответственный" Margin="5"/>
+            <TextBox x:Name="ОтветственныйTextBox" Margin="5"/>
+
+            <TextBlock Text="Дата начала" Margin="5"/>
+            <DatePicker x:Name="ДатаНачалаDatePicker" Margin="5"/>
+
+            <TextBlock Text="Дата завершения" Margin="5"/>
+            <DatePicker x:Name="ДатаЗавершенияDatePicker" Margin="5"/>
+
+            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

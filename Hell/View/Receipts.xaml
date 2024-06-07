@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hell.View.Receipts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hell.View"
+        mc:Ignorable="d"
+        Title="Чеки" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Номер чека" Margin="5"/>
+            <TextBox x:Name="НомерЧекаTextBox" Margin="5"/>
+
+            <TextBlock Text="Дата" Margin="5"/>
+            <DatePicker x:Name="ДатаDatePicker" Margin="5"/>
+
+            <TextBlock Text="Сумма" Margin="5"/>
+            <TextBox x:Name="СуммаTextBox" Margin="5"/>
+
+            <TextBlock Text="Кассир" Margin="5"/>
+            <TextBox x:Name="КассирTextBox" Margin="5"/>
+
+            <TextBlock Text="Магазин" Margin="5"/>
+            <TextBox x:Name="МагазинTextBox" Margin="5"/>
+
+            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

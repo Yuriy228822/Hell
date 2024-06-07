@@ -1,0 +1,29 @@
+﻿<Window x:Class="Hell.View.People"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hell.View"
+        mc:Ignorable="d"
+         Title="Люди" Height="450" Width="400">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Имя" Margin="5"/>
+            <TextBox x:Name="ИмяTextBox" Margin="5"/>
+
+            <TextBlock Text="Фамилия" Margin="5"/>
+            <TextBox x:Name="ФамилияTextBox" Margin="5"/>
+
+            <TextBlock Text="Должность" Margin="5"/>
+            <TextBox x:Name="ДолжностьTextBox" Margin="5"/>
+
+            <TextBlock Text="Контактные данные" Margin="5"/>
+            <TextBox x:Name="КонтактныеДанныеTextBox" Margin="5"/>
+
+            <TextBlock Text="Опыт работы (в годах)" Margin="5"/>
+            <TextBox x:Name="ОпытРаботыTextBox" Margin="5"/>
+
+            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
