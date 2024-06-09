@@ -3,24 +3,28 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-        Title="Упаковка" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Упаковка" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:PackagingViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Наименование" Margin="5"/>
-            <TextBox x:Name="НаименованиеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Наименование, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Материал" Margin="5"/>
-            <TextBox x:Name="МатериалTextBox" Margin="5"/>
+            <TextBox Text="{Binding Материал, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Структура" Margin="5"/>
-            <TextBox x:Name="СтруктураTextBox" Margin="5"/>
+            <TextBox Text="{Binding Структура, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Уровень упаковки" Margin="5"/>
-            <TextBox x:Name="УровеньУпаковкиTextBox" Margin="5"/>
+            <TextBox Text="{Binding УровеньУпаковки, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

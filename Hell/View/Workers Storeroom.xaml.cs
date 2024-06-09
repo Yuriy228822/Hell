@@ -23,18 +23,5 @@ namespace Hell.View
         {
             InitializeComponent();
         }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            string имя = ИмяTextBox.Text;
-            string фамилия = ФамилияTextBox.Text;
-            string отчество = ОтчествоTextBox.Text;
-            string должность = ДолжностьTextBox.Text;
-            DateTime датаПриемаНаРаботу = ДатаПриемаНаРаботуDatePicker.SelectedDate ?? DateTime.Now;
-
-            // Логика сохранения данных в базу данных
-
-            MessageBox.Show("Данные сохранены!");
-        }
     }
 }

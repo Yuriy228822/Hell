@@ -24,17 +24,6 @@ namespace Hell.View
             InitializeComponent();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            string этап = ЭтапTextBox.Text;
-            string описание = ОписаниеTextBox.Text;
-            string времяВыполнения = ВремяВыполненияTextBox.Text;
-            string ответственный = ОтветственныйTextBox.Text;
-            DateTime дата = ДатаDatePicker.SelectedDate ?? DateTime.Now;
-
-            // Логика сохранения данных в базу данных
-
-            MessageBox.Show("Данные сохранены!");
-        }
+       
     }
 }

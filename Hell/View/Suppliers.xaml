@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-        Title="Поставщики" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Поставщики" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:SuppliesViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Название" Margin="5"/>
-            <TextBox x:Name="НазваниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Контактные данные" Margin="5"/>
-            <TextBox x:Name="КонтактныеДанныеTextBox" Margin="5"/>
+            <TextBox Text="{Binding КонтактныеДанные, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Репутация" Margin="5"/>
-            <TextBox x:Name="РепутацияTextBox" Margin="5"/>
+            <TextBox Text="{Binding Репутация, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Условия поставки" Margin="5"/>
-            <TextBox x:Name="УсловияПоставкиTextBox" Margin="5"/>
+            <TextBox Text="{Binding УсловияПоставки, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Договор" Margin="5"/>
-            <TextBox x:Name="ДоговорTextBox" Margin="5"/>
+            <TextBox Text="{Binding Договор, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

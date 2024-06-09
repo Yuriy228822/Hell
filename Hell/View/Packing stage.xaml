@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-        Title="Этап фасовки" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Этап фасовки" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:PackingStageViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
-            <TextBlock Text="Этап" Margin="5"/>
-            <TextBox x:Name="ЭтапTextBox" Margin="5"/>
+            <TextBlock Text="Название этапа" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Описание" Margin="5"/>
-            <TextBox x:Name="ОписаниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Описание, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Время выполнения" Margin="5"/>
-            <TextBox x:Name="ВремяВыполненияTextBox" Margin="5"/>
+            <TextBlock Text="Оборудование" Margin="5"/>
+            <TextBox Text="{Binding Оборудование, Mode=TwoWay}" Margin="5"/>
+
+            <TextBlock Text="Продолжительность (мин)" Margin="5"/>
+            <TextBox Text="{Binding Продолжительность, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Ответственный" Margin="5"/>
-            <TextBox x:Name="ОтветственныйTextBox" Margin="5"/>
+            <TextBox Text="{Binding Ответственный, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Дата" Margin="5"/>
-            <DatePicker x:Name="ДатаDatePicker" Margin="5"/>
-
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

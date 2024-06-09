@@ -3,27 +3,42 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-        Title="Чеки" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Чеки" Height="450" Width="350"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewmodel:ReceiptsViewModel />
+    </Window.DataContext>
+
     <Grid>
-        <StackPanel>
-            <TextBlock Text="Номер чека" Margin="5"/>
-            <TextBox x:Name="НомерЧекаTextBox" Margin="5"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="10">
+            <StackPanel Margin="10">
+                <TextBlock Text="Чек" FontSize="20" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Дата" Margin="5"/>
-            <DatePicker x:Name="ДатаDatePicker" Margin="5"/>
+                <TextBlock Text="Номер чека:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding НомерЧека, Mode=TwoWay}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Сумма" Margin="5"/>
-            <TextBox x:Name="СуммаTextBox" Margin="5"/>
+                <TextBlock Text="Дата:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <DatePicker SelectedDate="{Binding Дата, Mode=TwoWay}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Кассир" Margin="5"/>
-            <TextBox x:Name="КассирTextBox" Margin="5"/>
+                <TextBlock Text="Сумма:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Сумма, Mode=TwoWay}" Margin="0,0,0,10"/>
 
-            <TextBlock Text="Магазин" Margin="5"/>
-            <TextBox x:Name="МагазинTextBox" Margin="5"/>
+                <TextBlock Text="Продукты:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Продукты, Mode=TwoWay}" Margin="0,0,0,10"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
-        </StackPanel>
+                <TextBlock Text="Покупатель:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Покупатель, Mode=TwoWay}" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Кассир:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Кассир, Mode=TwoWay}" Margin="0,0,0,10"/>
+
+                <TextBlock Text="Магазин:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBox Text="{Binding Магазин, Mode=TwoWay}" Margin="0,0,0,20"/>
+
+                <Button Content="Сохранить" Width="100" HorizontalAlignment="Center" Command="{Binding SaveCommand}" />
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

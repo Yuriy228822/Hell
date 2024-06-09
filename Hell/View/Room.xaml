@@ -3,27 +3,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-        Title="Помещение" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Помещение" Height="400" Width="400"
+        mc:Ignorable="d">
+
+    <Window.DataContext>
+        <viewmodel:RoomViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Название" Margin="5"/>
-            <TextBox x:Name="НазваниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Тип" Margin="5"/>
-            <TextBox x:Name="ТипTextBox" Margin="5"/>
+            <TextBox Text="{Binding Тип, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Площадь" Margin="5"/>
-            <TextBox x:Name="ПлощадьTextBox" Margin="5"/>
+            <TextBox Text="{Binding Площадь, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Адрес" Margin="5"/>
-            <TextBox x:Name="АдресTextBox" Margin="5"/>
+            <TextBlock Text="Местоположение" Margin="5"/>
+            <TextBox Text="{Binding Местоположение, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Владелец" Margin="5"/>
-            <TextBox x:Name="ВладелецTextBox" Margin="5"/>
+            <TextBlock Text="Состояние" Margin="5"/>
+            <TextBox Text="{Binding Состояние, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

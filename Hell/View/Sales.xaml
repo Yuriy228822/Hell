@@ -3,27 +3,37 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-         Title="Продажи" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Продажи" Height="450" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:SalesViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
-            <TextBlock Text="Название продукта" Margin="5"/>
-            <TextBox x:Name="НазваниеПродуктаTextBox" Margin="5"/>
+            <TextBlock Text="Продукт" Margin="5"/>
+            <TextBox Text="{Binding Продукт, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Количество" Margin="5"/>
-            <TextBox x:Name="КоличествоTextBox" Margin="5"/>
+            <TextBox Text="{Binding Количество, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Цена" Margin="5"/>
-            <TextBox x:Name="ЦенаTextBox" Margin="5"/>
+            <TextBox Text="{Binding Цена, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Дата продажи" Margin="5"/>
-            <DatePicker x:Name="ДатаПродажиDatePicker" Margin="5"/>
+            <TextBlock Text="Дата" Margin="5"/>
+            <DatePicker SelectedDate="{Binding Дата, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Покупатель" Margin="5"/>
-            <TextBox x:Name="ПокупательTextBox" Margin="5"/>
+            <TextBox Text="{Binding Покупатель, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <TextBlock Text="Магазин (ID)" Margin="5"/>
+            <TextBox Text="{Binding МагазинId, Mode=TwoWay}" Margin="5"/>
+
+            <TextBlock Text="Чек (ID)" Margin="5"/>
+            <TextBox Text="{Binding ЧекId, Mode=TwoWay}" Margin="5"/>
+
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

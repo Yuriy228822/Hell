@@ -2,28 +2,31 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
         Title="Оборудование" Height="450" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:EquipmentViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Название" Margin="5"/>
-            <TextBox x:Name="НазваниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Тип" Margin="5"/>
-            <TextBox x:Name="ТипTextBox" Margin="5"/>
+            <TextBox Text="{Binding Тип, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Производитель" Margin="5"/>
-            <TextBox x:Name="ПроизводительTextBox" Margin="5"/>
+            <TextBox Text="{Binding Производитель, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Дата покупки" Margin="5"/>
-            <DatePicker x:Name="ДатаПокупкиDatePicker" Margin="5"/>
+            <DatePicker SelectedDate="{Binding ДатаПокупки, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Состояние" Margin="5"/>
-            <TextBox x:Name="СостояниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Состояние, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

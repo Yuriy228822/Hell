@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-        Title="Ингредиенты" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Ингредиенты" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:IngredientsViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Название" Margin="5"/>
-            <TextBox x:Name="НазваниеTextBox" Margin="5"/>
-
-            <TextBlock Text="Тип" Margin="5"/>
-            <TextBox x:Name="ТипTextBox" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Количество" Margin="5"/>
-            <TextBox x:Name="КоличествоTextBox" Margin="5"/>
+            <TextBox Text="{Binding Количество, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Срок годности" Margin="5"/>
-            <DatePicker x:Name="СрокГодностиDatePicker" Margin="5"/>
+            <TextBlock Text="Качество" Margin="5"/>
+            <TextBox Text="{Binding Качество, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Поставщик" Margin="5"/>
-            <TextBox x:Name="ПоставщикTextBox" Margin="5"/>
+            <TextBox Text="{Binding Поставщик, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <TextBlock Text="Срок годности (дней)" Margin="5"/>
+            <TextBox Text="{Binding СрокГодности, Mode=TwoWay}" Margin="5"/>
+
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

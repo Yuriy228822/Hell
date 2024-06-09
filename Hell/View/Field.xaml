@@ -1,29 +1,32 @@
 ﻿<Window x:Class="Hell.View.Field"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-          Title="Поля" Height="400" Width="400">
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel" 
+        Title="Поля" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:FieldViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Название" Margin="5"/>
-            <TextBox x:Name="НазваниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Местоположение" Margin="5"/>
-            <TextBox x:Name="МестоположениеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Местоположение, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Площадь" Margin="5"/>
-            <TextBox x:Name="ПлощадьTextBox" Margin="5"/>
+            <TextBlock Margin="5"><Run Text="Площадь ("/><Run Language="ru-ru" Text="кв.м)"/></TextBlock>
+            <TextBox Text="{Binding Площадь, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Тип почвы" Margin="5"/>
-            <TextBox x:Name="ТипПочвыTextBox" Margin="5"/>
+            <TextBox Text="{Binding ТипПочвы, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Урожайность" Margin="5"/>
-            <TextBox x:Name="УрожайностьTextBox" Margin="5"/>
+            <TextBox Text="{Binding Урожайность, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

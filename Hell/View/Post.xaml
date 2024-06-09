@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-       Title="Должность" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Должность" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:PostViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
-            <TextBlock Text="Название должности" Margin="5"/>
-            <TextBox x:Name="НазваниеДолжностиTextBox" Margin="5"/>
+            <TextBlock Text="Название" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Описание" Margin="5"/>
-            <TextBox x:Name="ОписаниеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Описание, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Обязанности" Margin="5"/>
-            <TextBox x:Name="ОбязанностиTextBox" Margin="5"/>
+            <TextBox Text="{Binding Обязанности, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Требования" Margin="5"/>
-            <TextBox x:Name="ТребованияTextBox" Margin="5"/>
+            <TextBox Text="{Binding Требования, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Заработная плата" Margin="5"/>
-            <TextBox x:Name="ЗаработнаяПлатаTextBox" Margin="5"/>
+            <TextBox Text="{Binding ЗаработнаяПлата, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

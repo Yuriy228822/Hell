@@ -8,21 +8,21 @@ using System.Windows.Input;
 
 namespace Hell.ViewModel
 {
-    public class IngredientsViewModel : INotifyPropertyChanged
+    public class FinishedProductionViewModel : INotifyPropertyChanged
     {
-        private string _название;
+        private string _названиеПродукта;
         private int _количество;
         private string _качество;
-        private string _поставщик;
+        private DateTime _датаПроизводства;
         private int _срокГодности;
 
-        public string Название
+        public string НазваниеПродукта
         {
-            get => _название;
+            get => _названиеПродукта;
             set
             {
-                _название = value;
-                OnPropertyChanged(nameof(Название));
+                _названиеПродукта = value;
+                OnPropertyChanged(nameof(НазваниеПродукта));
             }
         }
 
@@ -46,13 +46,13 @@ namespace Hell.ViewModel
             }
         }
 
-        public string Поставщик
+        public DateTime ДатаПроизводства
         {
-            get => _поставщик;
+            get => _датаПроизводства;
             set
             {
-                _поставщик = value;
-                OnPropertyChanged(nameof(Поставщик));
+                _датаПроизводства = value;
+                OnPropertyChanged(nameof(ДатаПроизводства));
             }
         }
 
@@ -68,23 +68,24 @@ namespace Hell.ViewModel
 
         public ICommand SaveCommand { get; }
 
-        public IngredientsViewModel()
+        public FinishedProductionViewModel()
         {
-            SaveCommand = new AsyncRelayCommand(SaveIngredientAsync);
+            SaveCommand = new AsyncRelayCommand(SaveFinishedProductionAsync);
+            ДатаПроизводства = DateTime.Now;  // Установка текущей даты по умолчанию
         }
 
-        private async Task SaveIngredientAsync(object parameter)
+        private async Task SaveFinishedProductionAsync(object parameter)
         {
-            string название = Название;
+            string названиеПродукта = НазваниеПродукта;
             int количество = Количество;
             string качество = Качество;
-            string поставщик = Поставщик;
+            DateTime датаПроизводства = ДатаПроизводства;
             int срокГодности = СрокГодности;
 
             string connectionString = @"Data Source=(local);Initial Catalog=Pivo;Integrated Security=True";
 
-            string query = "INSERT INTO Ингредиенты (Название, Количество, Качество, Поставщик, Срок_годности) " +
-                           "VALUES (@Название, @Количество, @Качество, @Поставщик, @СрокГодности)";
+            string query = "INSERT INTO Готовая_продукция (Название_продукта, Количество, Качество, Дата_производства, Срок_годности) " +
+                           "VALUES (@НазваниеПродукта, @Количество, @Качество, @ДатаПроизводства, @СрокГодности)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -92,26 +93,26 @@ namespace Hell.ViewModel
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@Название", название);
+                    command.Parameters.AddWithValue("@НазваниеПродукта", названиеПродукта);
                     command.Parameters.AddWithValue("@Количество", количество);
                     command.Parameters.AddWithValue("@Качество", качество);
-                    command.Parameters.AddWithValue("@Поставщик", поставщик);
+                    command.Parameters.AddWithValue("@ДатаПроизводства", датаПроизводства);
                     command.Parameters.AddWithValue("@СрокГодности", срокГодности);
 
                     await command.ExecuteNonQueryAsync();
                 }
             }
 
-            MessageBox.Show("Ингредиент сохранен!");
+            MessageBox.Show("Данные сохранены!");
             Clear();
         }
 
         private void Clear()
         {
-            Название = string.Empty;
+            НазваниеПродукта = string.Empty;
             Количество = 0;
             Качество = string.Empty;
-            Поставщик = string.Empty;
+            ДатаПроизводства = DateTime.Now;
             СрокГодности = 0;
         }
 

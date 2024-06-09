@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-         Title="Кладовая" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Кладовая" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:PantryViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
-            <TextBlock Text="Название" Margin="5"/>
-            <TextBox x:Name="НазваниеTextBox" Margin="5"/>
-
-            <TextBlock Text="Тип" Margin="5"/>
-            <TextBox x:Name="ТипTextBox" Margin="5"/>
-
-            <TextBlock Text="Количество" Margin="5"/>
-            <TextBox x:Name="КоличествоTextBox" Margin="5"/>
-
-            <TextBlock Text="Дата поступления" Margin="5"/>
-            <DatePicker x:Name="ДатаПоступленияDatePicker" Margin="5"/>
+            <TextBlock Text="Название склада" Margin="5"/>
+            <TextBox Text="{Binding Название, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Местоположение" Margin="5"/>
-            <TextBox x:Name="МестоположениеTextBox" Margin="5"/>
+            <TextBox Text="{Binding Местоположение, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <TextBlock Text="Вместимость" Margin="5"/>
+            <TextBox Text="{Binding Вместимость, Mode=TwoWay}" Margin="5"/>
+
+            <TextBlock Text="Ответственный" Margin="5"/>
+            <TextBox Text="{Binding Ответственный, Mode=TwoWay}" Margin="5"/>
+
+            <TextBlock Text="Запасы" Margin="5"/>
+            <TextBox Text="{Binding Запасы, Mode=TwoWay}" Margin="5"/>
+
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

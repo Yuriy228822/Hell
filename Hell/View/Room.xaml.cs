@@ -23,18 +23,5 @@ namespace Hell.View
         {
             InitializeComponent();
         }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            string название = НазваниеTextBox.Text;
-            string тип = ТипTextBox.Text;
-            double площадь = Convert.ToDouble(ПлощадьTextBox.Text);
-            string адрес = АдресTextBox.Text;
-            string владелец = ВладелецTextBox.Text;
-
-            // Логика сохранения данных в базу данных
-
-            MessageBox.Show("Данные сохранены!");
-        }
     }
 }

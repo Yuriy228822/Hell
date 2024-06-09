@@ -3,27 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Hell.View"
-        mc:Ignorable="d"
-         Title="Люди" Height="450" Width="400">
+        xmlns:viewmodel="clr-namespace:Hell.ViewModel"
+        Title="Люди" Height="400" Width="400">
+
+    <Window.DataContext>
+        <viewmodel:PeopleViewModel />
+    </Window.DataContext>
+
     <Grid>
         <StackPanel>
             <TextBlock Text="Имя" Margin="5"/>
-            <TextBox x:Name="ИмяTextBox" Margin="5"/>
+            <TextBox Text="{Binding Имя, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Фамилия" Margin="5"/>
-            <TextBox x:Name="ФамилияTextBox" Margin="5"/>
+            <TextBox Text="{Binding Фамилия, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Должность" Margin="5"/>
-            <TextBox x:Name="ДолжностьTextBox" Margin="5"/>
+            <TextBox Text="{Binding Должность, Mode=TwoWay}" Margin="5"/>
 
             <TextBlock Text="Контактные данные" Margin="5"/>
-            <TextBox x:Name="КонтактныеДанныеTextBox" Margin="5"/>
+            <TextBox Text="{Binding КонтактныеДанные, Mode=TwoWay}" Margin="5"/>
 
-            <TextBlock Text="Опыт работы (в годах)" Margin="5"/>
-            <TextBox x:Name="ОпытРаботыTextBox" Margin="5"/>
+            <TextBlock Text="Опыт работы" Margin="5"/>
+            <TextBox Text="{Binding ОпытРаботы, Mode=TwoWay}" Margin="5"/>
 
-            <Button Content="Сохранить" Margin="5" Click="SaveButton_Click"/>
+            <Button Content="Сохранить" Margin="5" Command="{Binding SaveCommand}" />
         </StackPanel>
     </Grid>
 </Window>

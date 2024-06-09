@@ -24,14 +24,6 @@ namespace Hell.View
             InitializeComponent();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            string логин = ЛогинTextBox.Text;
-            string пароль = ПарольPasswordBox.Password;
-
-            // Логика сохранения данных в базу данных
-
-            MessageBox.Show("Данные сохранены!");
-        }
+        
     }
 }

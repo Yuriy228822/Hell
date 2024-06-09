@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Hell.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 namespace Hell.View
 {
     /// <summary>
@@ -22,19 +23,6 @@ namespace Hell.View
         public Field()
         {
             InitializeComponent();
-        }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            string название = НазваниеTextBox.Text;
-            string местоположение = МестоположениеTextBox.Text;
-            decimal площадь = Convert.ToDecimal(ПлощадьTextBox.Text);
-            string типПочвы = ТипПочвыTextBox.Text;
-            decimal урожайность = Convert.ToDecimal(УрожайностьTextBox.Text);
-
-            // Логика сохранения данных в базу данных
-
-            MessageBox.Show("Данные сохранены!");
         }
     }
 }
